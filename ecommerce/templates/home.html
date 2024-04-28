@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %} HOME PAGE {% endblock %}
+{% block content %}
+
+<div>
+  {% if category %}
+  <img src="{{category.image.url}}">
+</div>
+
+<div>
+  <h1> {{category.name}}</h1>
+  <p> {{category.desc}}</p>
+</div>
+
+{% else %}
+<style>
+  .desc{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    background-color:white;
+    border-radius:10px;
+    padding:10px;
+  }
+</style>
+
+{% endif %}
+<div class="container text-center">
+  <h1 align="center">Our products</h1>
+{% for prod in product %}
+
+
+<div class="card text-center mx-3 my-3 col-12 col-md-4 col-lg-3 col-xl-2" style="width: 10rem;  display:inline-block; p:5px">
+  <img class="card-img-top" src="{{prod.image.url}}"  alt="Card image cap" width="150px" height="100px">
+  <div class="card-body mx-auto p-3  text-center border rounded">
+    <h5 class="card-title">{{prod.name}}</h5>
+    <p class="card-text">{{prod.desc}}</p>
+    <p class="card-price">Price:{{prod.price}}</p>
+    <p class="card-stock">Stock:{{prod.stock}}</p>
+    <a href="#" class="btn btn-success">Buy product</a>
+  </div>
+</div>
+{% endfor %}
+</div>
+<div>
+
+  <p class="desc">"Welcome to Elanad Store, your one-stop destination for
+    all your household needs! From electronics and smart devices
+    to fashion items and kitchen utensils, we've got you covered.
+    Discover a seamless shopping experience where quality meets
+    affordability. Shop now and elevate your lifestyle with Elanad Store!"
+</p>
+</div>
+
+{% endblock %}

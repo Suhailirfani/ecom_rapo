@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Signout {% endblock %}
+{% block content %}
+<h1> Create your account</h1>
+<form action="/signout/" method="post">
+
+    <label for="">Username:  </label>
+    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+    <label for="">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter a password" required><br>
+    <div class="button" align="center">
+    <button type="submit" >Signin</button>
+    </div>
+
+</form>
+{% endblock %}

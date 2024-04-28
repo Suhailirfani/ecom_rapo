@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Signup {% endblock %}
+
+{% block content %}
+
+<h1> Create your account</h1>
+<form action="/signup/" method="post">
+    {% csrf_token %}
+
+    <label for="">Username:</label>
+    <input type="text"  id="username" name="username"  placeholder="Enter a username" required> <br>
+    <label for="">First Name</label>
+    <input type="text" id="fname" name="fname" placeholder="Enter your first name" required><br>
+    <label for="">Last Name</label>
+    <input type="text" id="lname" name="lname" placeholder="Enter your last name" required><br>
+    <label for="">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email id" required><br>
+    <label for="">Password:</label>
+    <input type="password" id="password1" name="password1" placeholder="Enter a password" required><br>
+
+    <label for="">Confirm password</label>
+    <input type="password" id="password2" name="password2" placeholder="Confirm your password" required> <br>
+
+
+    <button type="submit" >Signup</button>
+    <br>
+
+
+    <h4>Already have an account?.  </h4>
+    <a href="signin"><button type="submit" >Signin</button></a>
+
+
+
+</form>
+
+
+{% endblock %}
